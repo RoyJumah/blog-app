@@ -12,3 +12,5 @@ class CreatePosts < ActiveRecord::Migration[7.0]
     add_index :posts, :author_id
   end
 end
+
+
