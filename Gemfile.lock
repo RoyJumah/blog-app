@@ -178,6 +178,7 @@ GEM
     rspec-mocks (3.12.5)
       diff-lcs (>= 1.2.0, < 2.0)
       rspec-support (~> 3.12.0)
+<<<<<<< HEAD
     rspec-rails (6.0.1)
       actionpack (>= 6.1)
       activesupport (>= 6.1)
@@ -187,6 +188,30 @@ GEM
       rspec-mocks (~> 3.11)
       rspec-support (~> 3.11)
     rspec-support (3.12.0)
+=======
+    rspec-rails (5.0.3)
+      actionpack (>= 5.2)
+      activesupport (>= 5.2)
+      railties (>= 5.2)
+      rspec-core (~> 3.10)
+      rspec-expectations (~> 3.10)
+      rspec-mocks (~> 3.10)
+      rspec-support (~> 3.10)
+    rspec-support (3.12.0)
+    rubocop (1.48.1)
+      json (~> 2.3)
+      parallel (~> 1.10)
+      parser (>= 3.2.0.0)
+      rainbow (>= 2.2.2, < 4.0)
+      regexp_parser (>= 1.8, < 3.0)
+      rexml (>= 3.2.5, < 4.0)
+      rubocop-ast (>= 1.26.0, < 2.0)
+      ruby-progressbar (~> 1.7)
+      unicode-display_width (>= 2.4.0, < 3.0)
+    rubocop-ast (1.28.0)
+      parser (>= 3.2.1.0)
+    ruby-progressbar (1.13.0)
+>>>>>>> d7db6f5107eb143d4533bb5fb8da15add1779a40
     rubyzip (2.3.2)
     selenium-webdriver (4.8.6)
       rexml (~> 3.2, >= 3.2.5)
@@ -241,7 +266,12 @@ DEPENDENCIES
   pg (~> 1.1)
   puma (~> 5.0)
   rails (~> 7.0.4, >= 7.0.4.3)
+<<<<<<< HEAD
   rspec-rails
+=======
+  rspec-rails (~> 5.0.0)
+  rubocop (>= 1.0, < 2.0)
+>>>>>>> d7db6f5107eb143d4533bb5fb8da15add1779a40
   selenium-webdriver
   sprockets-rails
   stimulus-rails
