@@ -1,64 +1,49 @@
 <a name="readme-top"></a>
 
-<div align="center">
-  <h3><b>Inkwell-blog Readme</b></h3>
-</div>
-
 <!-- TABLE OF CONTENTS -->
 
 # 📗 Table of Contents
 
-- [📖 About the Project](#about-project)
-  - [🛠 Built With](#built-with)
-    - [Tech Stack](#tech-stack)
-    - [Key Features](#key-features)
-  - [🚀 Live Demo](#live-demo)
-- [💻 Getting Started](#getting-started)
-  - [Setup](#setup)
-  - [Prerequisites](#prerequisites)
-  - [Install](#install)
-  - [Usage](#usage)
-  - [Run tests](#run-tests)
-  - [Deployment](#triangular_flag_on_post-deployment)
-- [👥 Authors](#authors)
-- [🔭 Future Features](#future-features)
-- [🤝 Contributing](#contributing)
-- [⭐️ Show your support](#support)
-- [🙏 Acknowledgements](#acknowledgements)
-- [❓ FAQ (OPTIONAL)](#faq)
-- [📝 License](#license)
+- [📗 Table of Contents](#-table-of-contents)
+- [📖 blog-app ](#-blog_app-)
+  - [🛠 Built With ](#-built-with-)
+    - [Tech Stack ](#tech-stack-)
+    - [Key Features ](#key-features-)
+  - [💻 Getting Started ](#-getting-started-)
+    - [Prerequisites](#prerequisites)
+    - [Setup](#setup)
+  - [👥 Authors ](#-authors-)
+  - [🔭 Future Features](#future-features)
+  - [🤝 Contributing ](#-contributing-)
+  - [⭐️ Show your support ](#️-show-your-support-)
+  - [🙏 Acknowledgments ](#-acknowledgments-)
+  - [📝 License ](#-license-)
 
 <!-- PROJECT DESCRIPTION -->
 
-# 📖 Inkwell-blog <a name="about-project"></a>
+# 📖 Blog App <a name="about-project"></a>
 
-**Inkwell-blog** is a blog application that allows users to create, read, update, and delete blog posts. Users can also comment on blog posts and like/dislike blog posts.
+- This project is a simple Ruby on Rails blog application with user authentication and CRUD functionality for posts, comments, and likes.
+
+<p align="right">(<a href="#readme-top">back to top</a>)</p>
 
 ## 🛠 Built With <a name="built-with"></a>
 
 ### Tech Stack <a name="tech-stack"></a>
 
-<details>
-  <summary>Framework</summary>
   <ul>
-    <li><a href="https://rubyonrails.org/"Ruby on rails</a><li>
+    <li><a href="https://guides.rubyonrails.org/">Ruby on Rails</a></li>
+    <li><a href="https://www.javatpoint.com/postgresql-tutorial">PostgreSQL</a></li>
   </ul>
-</details>
-
-<details>
-<summary>Database</summary>
-  <ul>
-    <li><a href="https://www.postgresql.org/">PostgreSQL</a></li>
-  </ul>
-</details>
 
 <!-- Features -->
 
 ### Key Features <a name="key-features"></a>
 
-- **Create post**
-- **Delete post**
-- **Update post**
+- **Blogging platform.**
+- **User authentication and authorization.**
+- **Commenting on posts.**
+- **Liking posts.**
 
 <p align="right">(<a href="#readme-top">back to top</a>)</p>
 
@@ -66,67 +51,42 @@
 
 ## 💻 Getting Started <a name="getting-started"></a>
 
-To get a local copy up and running, follow these steps.
-
 ### Prerequisites
 
 In order to run this project you need:
-- install ruby
-```sh
-  sudo apt-get install ruby-full
-```
-- install rails
-```sh
- gem install rails
-```
-- install postgresql
-```sh
-  sudo apt-get install postgresql postgresql-contrib libpq-dev
-```
+
+- To install ruby on rails on your PC. You can read [this](https://guides.rubyonrails.org/) documentation on how to do so
+- Know how to navigate directories or folders at the CLI.
+- Know how to get the URL(https/ssh) of a repository on GitHub.
+- You should have a code editor installed, preferably VSCode.
 
 ### Setup
 
-Clone this repository to your desired folder:
+In desired folder or directory in the CLI, run the command:
 
-```sh
-  cd my-folder
-  git clone git@github.com:yuvenalmash/inkwell-blog.git
-```
-Prepare the database:
-- create user and password
-```sh
-  sudo -u postgres createuser -s inkwell_blog -P
-```
-- Add password to env file
-```sh
-  echo "DB_PASSWORD=[your_password]" >> .env
-  source .env
-```
-- create database
-```sh
-  rails db:create
-  rails db:migrate
+```JavaScipt
+cd clone https://github.com/RoyJumah/blog-app.git
 ```
 
-### Usage
+Navigate into the cloned folder or repository by running the command:
 
-To run the project, execute the following command:
-
-```sh
-  rails server
+```JavaScript
+ cd <blog_app>
 ```
 
-### Run tests
-> Tests not yet implemented
+If VsCode is your default code editor, run:
 
-<!-- To run tests, run the following command:
+```JavaScript
+  code .
+```
 
-```sh
-  bin/rails test test/models/user_test.rb
-  bin/rails test test/models/post_test.rb
-  bin/rails test test/models/comment_test.rb
-  bin/rails test test/models/like_test.rb
-``` -->
+To install all the dependencies, run:
+
+```JavaScript
+ bundle install
+```
+
+You are all set up!
 
 <p align="right">(<a href="#readme-top">back to top</a>)</p>
 
@@ -134,11 +94,11 @@ To run the project, execute the following command:
 
 ## 👥 Authors <a name="authors"></a>
 
-👤 **Author1**
+👤 **Roy Jumah**
 
-- GitHub: [@githubhandle](https://github.com/yuvenalmash)
-- Twitter: [@twitterhandle](https://twitter.com/_Juvenal_)
-- LinkedIn: [LinkedIn](https://linkedin.com/in/yuvenal-njoroge)
+- GitHub: [@RoyJumah](https://github.com/RoyJumah)
+- Twitter: [@\_royissues](https://twitter.com/_royissues)
+- LinkedIn: [Roy Jumah](https://www.linkedin.com/in/roy-jumah/)
 
 <p align="right">(<a href="#readme-top">back to top</a>)</p>
 
@@ -146,17 +106,19 @@ To run the project, execute the following command:
 
 ## 🔭 Future Features <a name="future-features"></a>
 
-- [ ] **Upgrade UI**
+- [ ] Social media sharing buttons.
+- [ ] User avatars and profiles.
+- [ ] Tag-based article categorization.
+- [ ] Built-in search functionality.
 
 <p align="right">(<a href="#readme-top">back to top</a>)</p>
-
 <!-- CONTRIBUTING -->
 
 ## 🤝 Contributing <a name="contributing"></a>
 
 Contributions, issues, and feature requests are welcome!
 
-Feel free to check the [issues page](../../issues/).
+Feel free to check the [issues page](https://github.com/RoyJumah/blog-app/issues).
 
 <p align="right">(<a href="#readme-top">back to top</a>)</p>
 
@@ -164,7 +126,7 @@ Feel free to check the [issues page](../../issues/).
 
 ## ⭐️ Show your support <a name="support"></a>
 
-If you like this project give it a star ⭐️
+If you like this project you can give it a star
 
 <p align="right">(<a href="#readme-top">back to top</a>)</p>
 
@@ -172,7 +134,7 @@ If you like this project give it a star ⭐️
 
 ## 🙏 Acknowledgments <a name="acknowledgements"></a>
 
-I would like to thank microverse for giving me the opportunity to learn and grow as a developer.
+I would like to thank `Microverse` for providing me the resources that enabled us to finish this challenge!
 
 <p align="right">(<a href="#readme-top">back to top</a>)</p>
 
