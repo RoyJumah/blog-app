@@ -7,7 +7,6 @@ AllCops:
     - "Guardfile"
     - "Rakefile"
     - "node_modules/**/*"
-    - "**/*.rb"
 
   DisplayCopNames: true
 
@@ -58,4 +57,6 @@ Style/HashEachMethods:
 Style/HashTransformKeys:
   Enabled: false
 Style/HashTransformValues:
+  Enabled: false
+Layout/EndOfLine:
   Enabled: false
