@@ -1,1 +1,26 @@
-<h1>User Details</h1>
+<section class = 'appearance-none'>
+<h1 class = 'text-3xl font-medium mb-5'>Single user</h1>
+
+<div class = ' py-4'>
+    <img src="<%= @user.photo %>" alt="user photo">
+    <h2> <%= @user.name %></h2>
+      <p>Number of posts: <%= @user.posts_counter %></p>
+ 
+  <h2>Bio</h2>
+  <p><%= @user.bio %></p>
+  <% @user.most_recent_posts.each do |post| %>
+      <h2 class ="font-bold">Post #<%= post.id %></h2>
+      <p><%= post.text %></p>
+        <span>Comments: <%= "#{post.comments_counter || 0 } "%></span>
+        <span>, Likes: <%= "#{ post.likes_counter || 0 }"%></span>
+  <% end %> 
+  <div>
+  <div class="p-2 bg-blue-500 inline-block rounded-md">
+    <a href=<%= "/users/#{@user.id}/posts"%>>
+    <span class="text-white font-semibold">See All Posts</span>
+  </a>
+  </div>
+  </div>
+<div>
+  </section>
+  
