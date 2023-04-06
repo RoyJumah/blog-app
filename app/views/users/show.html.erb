@@ -1,1 +1,18 @@
-<h1>User Details</h1>
+<h1>Single user</h1>
+
+    <img src="<%= @user.photo %>" alt="user photo">
+    <h2> <%= @user.name %></h2>
+      <p>Number of posts: <%= @user.posts_counter %></p>
+ 
+  <h2>Bio</h2>
+  <p><%= @user.bio %></p>
+  <% @user.most_recent_posts.each do |post| %>
+      <h2>Post #<%= post.id %></h2>
+      <p><%= post.text %></p>
+        <span>Comments: <%= "#{post.comments_counter || 0 } "%></span>
+        <span>, Likes: <%= "#{ post.likes_counter || 0 }"%></span>
+  <% end %> 
+    <a href=<%= "/users/#{@user.id}/posts"%>>
+    See All Posts
+  </a>
+  
