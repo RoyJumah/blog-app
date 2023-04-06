@@ -34,3 +34,6 @@
 .env
 
 .vscode
+
+/app/assets/builds/*
+!/app/assets/builds/.keep

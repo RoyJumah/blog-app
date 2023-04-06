@@ -1,25 +1,27 @@
-<h1>List of posts for a given user</h1>
+<section class = 'appearance-none'>
+
+<h1 class = 'text-3xl font-medium'>List of posts for a given user</h1>
 
     <img src="<%= @user.photo %>" alt="user photo">
 
     <h2> <%= @user.name %></h2>
       <p>Number of posts: <%= @user.posts_counter %></p>
 
-<section>
-  <% @user.most_recent_posts.each_with_index do |post, index| %>
+  <% @user.posts.each_with_index do |post, index| %>
     <a href=<%= "/users/#{@user.id}/posts/#{post.id}" %>>
-        <h3>Post #<%= index + 1 %></h3>
+        <h3 class ='font-bold'>Post #<%= index + 1 %></h3>
         <p><%= post.text %></p>
 
           <span>Comments: <%= "#{post.comments_counter || 0 }"%></span>
           <span>, Likes: <%= "#{post.likes_counter || 0 }"%></span>
     </a>
 
-      <% post.most_recent_comments.each_with_index do |comment, index| %>
+    <% post.most_recent_comments.each_with_index do |comment, index| %>
+      <div class = 'flex flex-col'>
           <span><%= comment.author.name %>:</span>
           <span> <%= comment.text %></span>
+          </div>
       <% end %>
-    
   <% end %>
 </section>
 
