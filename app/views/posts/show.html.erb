@@ -1,16 +1,22 @@
-
-<section class = 'appearance-none'>
-<h1 class = "text-3xl font-medium">Single post to a given user</h1>
-      <h2>
-      Post #<%= @post.id %> by <%= @user.name %>
-      </h2>
-        <span>Comments: <%= @post.comments_counter %></span>
-        <span>, Likes: <%= @post.likes_counter %></span>
-    
-      <p class ='text-3xl font-medium'> <%= @post.text %></p>
-    
-    <% @post.most_recent_comments.each_with_index do |comment| %>
-      <p><%= "#{comment.author.name}: #{comment.text}" %></p>
+<div class="bg-white rounded-lg shadow-lg p-6 max-w-md container mx-auto">
+  <h1 class="text-3xl font-medium mb-4">Single post for a given user</h1>
+  <h2 class="mb-4">Post #<%= @post.id %> by <%= @user.name %></h2>
+  <div class="flex mb-4 text-gray-500 text-sm">
+    <span class="mr-4">Comments: <%= @post.comments_counter %></span>
+    <span>Likes: <%= @post.likes_counter %></span>
+  </div>
+  <p class="text-lg mb-4"><%= @post.text %></p>
+  <% @post.most_recent_comments.each do |comment| %>
+    <div class="flex mb-2">
+      <span class="font-medium mr-2"><%= comment.author.name %>:</span>
+      <span class = 'text-gray-500'><%= comment.text %></span>
+    </div>
+  <% end %>
+  <div class="mt-4">
+    <h3 class="text-lg font-medium mb-2">Add a comment:</h3>
+    <%= form_for [@post, Comment.new], url: "/comments/#{ @post.id }" do |form| %>
+      <%= form.text_area :text, placeholder: "Add comment", class: "w-full rounded-lg p-2 border-gray-300 mb-4 focus:outline-none focus:ring-2 focus:ring-blue-600" %>
+      <%= form.submit "Add Comment", class: "bg-blue-600 hover:bg-blue-700 text-white  py-2 px-4 transition-all duration-200" %>
     <% end %>
-
-</section>
+  </div>
+</div>
