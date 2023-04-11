@@ -1,55 +1,60 @@
-<div class="bg-white rounded-lg shadow-lg p-6 max-w-md container mx-auto p-8 flex flex-col gap-4">
-  <h1 class="text-3xl font-medium text-center mb-4">List of posts for a given user</h1>
+<div class="bg-white rounded-lg shadow-lg p-6 container mx-auto p-8 flex flex-col gap-8">
+  <h1 class="text-3xl font-bold text-center mb-8">List of posts for a given user</h1>
 
-  <div class="flex gap-4">
+  <div class="flex items-center gap-8">
     <div>
-      <img src="<%= @user.photo %>" alt="user photo" class="rounded-full h-20 w-20">
+      <img src="<%= @user.photo %>" alt="user photo" class="rounded-full h-24 w-24">
     </div>
 
     <div class="flex flex-col justify-center">
-      <h2 class="text-2xl font-medium"> <%= @user.name %></h2>
+      <h2 class="text-2xl font-bold leading-tight"><%= @user.name %></h2>
       <div class="flex flex-row gap-4 mt-2">
-        <p class="text-gray-500 text-xl">Number of posts:</p>
-        <p class="text-xl"><%= @user.posts_counter || 0 %></p>
+        <p class="text-gray-500 text-lg font-medium">Number of posts:</p>
+        <p class="text-lg font-medium"><%= @user.posts_counter || 0 %></p>
       </div>
     </div>
   </div>
 
-  <section class="mt-4">
-    <% @user.most_recent_posts.each do |post| %>
-      <div class="bg-gray-100 rounded-lg p-4">
-        <h3 class="text-xl font-medium mb-2"><%= link_to post.title, "/users/#{@user.id}/posts/#{post.id}", class: "hover:text-blue-500" %></h3>
-        <p class="text-gray-700 text-base"><%= post.text %></p>
+  <section class="mt-8">
+    <% @posts.each do |post| %>
+      <div class="bg-gray-100 rounded-lg p-6">
+        <h3 class="text-2xl font-bold mb-4"><%= link_to post.title, "/users/#{@user.id}/posts/#{post.id}", class: "hover:text-blue-500" %></h3>
+        <p class="text-gray-700 text-lg leading-relaxed"><%= post.text %></p>
 
-        <div class="flex justify-between items-center mt-4">
+        <div class="flex justify-between items-center mt-8">
           <div>
             <%= form_with url: "/likes/#{post.id}" do |form| %>
               <%= form.submit "Like", class: "bg-blue-500 text-white px-4 py-2 rounded-lg hover:bg-blue-600 transition-all duration-200" %>
             <% end %>
           </div>
 
-          <div class="text-gray-500 text-base">
+          <div class="text-gray-500 text-lg font-medium">
             <span>Comments: <%= "#{post.comments_counter || 0 }"%></span>
             <span>, Likes: <%= "#{post.likes_counter || 0 }"%></span>
           </div>
         </div>
       </div>
 
-      <div class="bg-gray-50 rounded-lg p-4 mt-2">
-        <h4 class="text-lg font-medium mb-2">Comments</h4>
+      <div class="bg-gray-50 rounded-lg p-6 mt-4">
+        <h4 class="text-xl font-bold mb-4">Comments</h4>
         <% post.most_recent_comments.each do |comment| %>
           <div class="flex flex-col gap-1">
             <span class="font-medium"><%= comment.author.name %>:</span>
-            <span class="text-gray-700 text-base"><%= comment.text %></span>
+            <span class="text-gray-700 text-lg leading-relaxed"><%= comment.text %></span>
           </div>  
         <% end %>
       </div>
     <% end %>
   </section>
 
-  <div class="mt-5">
-    <a href="/posts/new" class="inline-block rounded bg-blue-500 py-2 px-4 hover:bg-blue-600 transition-all duration-200">
-      <span class="text-white font-bold">
+  <nav class="mt-5 flex justify-center items-center">
+  <%== pagy_bootstrap_nav(@pagy) %>
+</nav>
+
+
+  <div class="flex justify-center mt-12">
+    <a href="/posts/new" class="inline-block rounded-lg bg-blue-500 text-white py-3 px-8 hover:bg-blue-600 transition-all duration-200">
+      <span class="font-bold text-lg">
         Create new post
       </span>
     </a>
