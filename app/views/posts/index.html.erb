@@ -37,7 +37,7 @@
 
       <div class="bg-gray-50 rounded-lg p-6 mt-4">
         <h4 class="text-xl font-bold mb-4">Comments</h4>
-        <% post.most_recent_comments.each do |comment| %>
+        <% post.most_recent_comments.includes(:author).each do |comment| %>
           <div class="flex flex-col gap-1">
             <span class="font-medium"><%= comment.author.name %>:</span>
             <span class="text-gray-700 text-lg leading-relaxed"><%= comment.text %></span>
@@ -48,7 +48,7 @@
   </section>
 
   <nav class="mt-5 flex justify-center items-center">
-  <%== pagy_bootstrap_nav(@pagy) %>
+  <%== pagy_nav(@pagy) %>
 </nav>
 
 
