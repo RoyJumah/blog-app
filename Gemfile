@@ -5,8 +5,6 @@ ruby '3.1.3'
 
 gem 'pagy'
 
-gem 'bullet', group: 'development'
-
 # Bundle edge Rails instead: gem "rails"
 gem 'rails', '~> 7.0.4', '>= 7.0.4.3'
 gem 'rails-controller-testing'
