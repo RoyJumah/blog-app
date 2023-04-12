@@ -1,30 +1,34 @@
-<div class="bg-white rounded-lg shadow-lg p-6 max-w-md container mx-auto p-8">
-<h1 class = 'text-3xl font-medium mb-5'>Single user</h1>
+<div class="bg-white rounded-lg shadow-lg p-6 container mx-auto p-8">
+  <h1 class="text-3xl font-medium mb-5">Single user</h1>
 
-<div class = ' py-4'>
-    <img src="<%= @user.photo %>" alt="user photo">
-    <h2 class = 'text-2xl font-medium'> <%= @user.name %></h2>
-      <p class = 'text-2xl'>Number of posts: <span class = 'text-gray-500'><%= @user.posts_counter %></span></p>
- <div class = 'mt-4'>
-  <h2 class ='text-2xl font-medium'>Bio</h2>
-  <p class = 'text-2xl'><%= @user.bio %></p>
-  </div>
+  <div class="py-4">
+    <img src="<%= @user.photo %>" alt="user photo" class="w-32 h-32 rounded-full mx-auto mb-4">
+    <h2 class="text-2xl font-medium text-center mb-2"><%= @user.name %></h2>
+    <p class="text-xl text-center text-gray-500 mb-6">Number of posts: <span class="text-gray-700"><%= @user.posts_counter %></span></p>
+    <div class="text-xl mb-6">
+      <h2 class="font-medium">Bio</h2>
+      <p><%= @user.bio %></p>
+    </div>
 
-  <div class = 'mt-4'>
-  <% @user.most_recent_posts.each do |post| %>
-      <h2 class ="font-bold text-2xl">Post #<%= post.id %></h2>
-      <p class = 'text-2xl'><%= post.text %></p>
-        <span class ="text-xl text-gray-500">Comments: <%= "#{post.comments_counter || 0 } "%></span>
-        <span class = 'text-gray-500 text-xl'>, Likes: <%= "#{ post.likes_counter || 0 }"%></span>
-  <% end %> 
+    <div class="mt-8">
+      <% @user.most_recent_posts.each do |post| %>
+        <div class="mb-8">
+          <h2 class="font-bold text-2xl mb-2">Post #<%= post.id %></h2>
+          <p class="text-xl mb-4"><%= post.text %></p>
+          <div class="flex text-gray-500 text-xl">
+            <span class="mr-8">Comments: <%= "#{post.comments_counter || 0 }" %></span>
+            <span>Likes: <%= "#{ post.likes_counter || 0 }" %></span>
+          </div>
+        </div>
+      <% end %>
+    </div>
+
+    <div class="flex justify-center mt-8">
+      <div class="p-2 bg-blue-500 rounded">
+        <a href="/users/<%= @user.id %>/posts" class="text-white font-semibold">
+          See All Posts
+        </a>
+      </div>
+    </div>
   </div>
-  <div>
-  <div class="p-2 bg-blue-500 inline-block rounded mt-5">
-    <a href=<%= "/users/#{@user.id}/posts"%>>
-    <span class="text-white font-semibold">See All Posts</span>
-  </a>
-  </div>
-  </div>
-<div>
-  </div>
-  
+</div>
