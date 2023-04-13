@@ -1,13 +1,9 @@
 class UsersController < ApplicationController
   before_action :authenticate_user!
 
-  # def autheticate_user!
-  #   redirect_to '/users/sign_in' unless user_signed_in?
-  # end
 
   def index
     @users = User.all
-    @current_user = current_user
   end
 
   def show
