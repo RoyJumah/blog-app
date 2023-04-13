@@ -12,7 +12,29 @@
   </head>
 
   <body>
+ <nav class="bg-blue-600">
+  <div class="mx-auto px-4 py-2">
+    <div class="flex justify-between">
+      <div class="flex items-center">
+        <a href="/" class="text-white font-semibold text-lg">My Blog</a>
+      </div>
+      <div class="flex items-center">
+        <ul class="flex">
+          <% if current_user %>
+            <li><%= link_to "Edit Account", edit_user_registration_path, class: "block px-3 py-2 text-white hover:bg-blue-700" %></li>
+            <li><%= button_to "Sign Out", destroy_user_session_path, method: :delete, class: "block px-3 py-2 bg-red-600 hover:bg-red-700 text-white font-semibold rounded-lg ml-4" %></li>
+          <% else %>
+            <li><%= link_to "Sign Up", new_user_registration_path, class: "block px-3 py-2 text-white hover:bg-blue-700"  %></li>
+            <li><%= link_to "Sign In", new_user_session_path, class: "block px-3 py-2 text-white hover:bg-blue-700"  %></li>
+          <% end %>
+        </ul>
+      </div>
+    </div>
+  </div>
+</nav>
     <main class="container mx-auto mt-28 px-5 flex">
+     <p class="notice"><%= notice %></p>
+       <p class="alert"><%= alert %></p>
       <%= yield %>
     </main>
   </body>

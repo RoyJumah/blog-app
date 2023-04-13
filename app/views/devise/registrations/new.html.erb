@@ -1,0 +1,36 @@
+<div class="bg-white rounded-lg shadow-lg container mx-4 p-4">
+  <h2 class="text-2xl font-bold text-center">Sign up</h2>
+
+  <%= form_for(resource, as: resource_name, url: registration_path(resource_name), html: { class: "mt-8 space-y-6" }) do |f| %>
+    <%= render "devise/shared/error_messages", resource: resource %>
+    
+    <div class="rounded-md shadow-sm -space-y-px">
+      <div>
+        <%= f.label :name, class: "block text-sm font-medium text-gray-700 mb-2" %>
+        <%= f.text_field :name, id: "name", class: "appearance-none rounded-none relative block w-full px-3 py-2 border border-gray-300 placeholder-gray-500 text-gray-900 rounded-t-md focus:outline-none focus:ring-blue-500 focus:border-blue-500 focus:z-10 sm:text-sm", placeholder: "Your full name", autocomplete: "name" %>
+      </div>
+      <div>
+        <%= f.label :email, class: "block text-sm font-medium text-gray-700 mb-2" %>
+        <%= f.email_field :email, id: "email", class: "appearance-none rounded-none relative block w-full px-3 py-2 border border-gray-300 placeholder-gray-500 text-gray-900 rounded-t-md focus:outline-none focus:ring-blue-500 focus:border-blue-500 focus:z-10 sm:text-sm", placeholder: "Email address", autocomplete: "email" %>
+      </div>
+
+      <div>
+        <%= f.label :password, class: "block text-sm font-medium text-gray-700 mb-2" %>
+        <% if @minimum_password_length %>
+        <em class="text-sm text-gray-600">(<%= @minimum_password_length %> characters minimum)</em>
+        <% end %>
+        <%= f.password_field :password, id: "password", class: "appearance-none rounded-none relative block w-full px-3 py-2 border border-gray-300 placeholder-gray-500 text-gray-900 rounded-b-md focus:outline-none focus:ring-blue-500 focus:border-blue-500 focus:z-10 sm:text-sm", placeholder: "Password", autocomplete: "new-password" %>
+      </div>
+      <div>
+        <%= f.label :password_confirmation, class: "block text-sm font-medium text-gray-700 mb-2" %>
+        <%= f.password_field :password_confirmation, id: "password_confirmation", class: "appearance-none rounded-none relative block w-full px-3 py-2 border border-gray-300 placeholder-gray-500 text-gray-900 rounded-b-md focus:outline-none focus:ring-blue-500 focus:border-blue-500 focus:z-10 sm:text-sm", placeholder: "Confirm password", autocomplete: "new-password" %>
+      </div>
+    </div>
+
+    <div class="flex items-center justify-end mt-4">
+      <%= f.submit "Sign up", class: "py-2 px-4 border border-transparent text-sm font-medium rounded-md text-white bg-blue-600 hover:bg-blue-700 focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-blue-500" %>
+    </div>
+  <% end %>
+
+  <%= render "devise/shared/links" %>
+</div>

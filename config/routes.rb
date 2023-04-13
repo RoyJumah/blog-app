@@ -1,4 +1,6 @@
 Rails.application.routes.draw do
+  # get 'home/header'
+  devise_for :users
   root to: 'users#index'
 
   get 'posts/new', to: 'posts#new'

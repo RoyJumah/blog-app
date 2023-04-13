@@ -100,6 +100,12 @@ You are all set up!
 - Twitter: [@\_royissues](https://twitter.com/_royissues)
 - LinkedIn: [Roy Jumah](https://www.linkedin.com/in/roy-jumah/)
 
+👤 **Samuel Kyere**
+
+- GitHub: [@AdmirerBrown](https://github.com/admirerbrown)
+- Twitter: [@samuelkyere](https://twitter.com/)
+- LinkedIn: [Samuel Kyere](https://www.linkedin.com/)
+
 <p align="right">(<a href="#readme-top">back to top</a>)</p>
 
 <!-- FUTURE FEATURES -->
