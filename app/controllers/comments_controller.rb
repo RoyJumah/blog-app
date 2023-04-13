@@ -14,6 +14,18 @@ class CommentsController < ApplicationController
     redirect_to "/users/#{current_user.id}/posts"
   end
 
+  def destroy
+    @comment = current_user.comments.find_by(id: params[:id])
+    if @comment&.destroy
+      flash[:success] = 'Comment deleted!'
+      @comment.post.decrement!(:comments_counter) # Decrease the comments count by 1 for the post
+    else
+      flash[:danger] = 'Comment not deleted!'
+    end
+    redirect_to user_posts_path(current_user)
+  end
+  
+  
   private
 
   def comment_params

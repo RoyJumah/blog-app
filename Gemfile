@@ -5,6 +5,9 @@ ruby '3.1.3'
 
 gem 'pagy'
 
+gem 'cancancan', '~> 1.9'
+
+
 # Bundle edge Rails instead: gem "rails"
 gem 'rails', '~> 7.0.4', '>= 7.0.4.3'
 gem 'rails-controller-testing'
@@ -66,6 +69,8 @@ group :development do
 
   # Speed up commands on slow machines / big apps
   # gem "spring"
+
+  gem 'letter_opener'
 end
 
 group :test do

@@ -23,6 +23,19 @@ class PostsController < ApplicationController
       render :new, status: :unprocessable_entity
     end
   end
+  
+  def destroy
+    puts "Destroying comment..."
+    @post = current_user.posts.find_by(id: params[:id])
+    if @post&.destroy
+      flash[:success] = 'Post deleted!'
+      current_user.decrement!(:posts_counter) # Decrease the post count by 1 for the current_user
+    else
+      flash[:danger] = 'Post not deleted!'
+    end
+    redirect_to user_posts_path(current_user) # Redirect to the user's posts page
+  end
+  
 
   private
 
