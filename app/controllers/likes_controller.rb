@@ -4,6 +4,6 @@ class LikesController < ApplicationController
     @like.post_id = params[:post_id]
     @like.save
     flash[:success] = 'Liked!'
-    redirect_to "/users/#{current_user.id}/posts"
+    redirect_to posts_path(params[:post_id])
   end
 end

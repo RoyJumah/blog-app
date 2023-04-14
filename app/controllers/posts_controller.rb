@@ -24,6 +24,19 @@ class PostsController < ApplicationController
     end
   end
 
+  def destroy
+    @post = Post.find(params[:id])
+    if @post.destroy
+      flash[:success] = 'Post deleted!'
+      @post.author.decrement!(:posts_counter)
+    else
+      flash[:danger] = 'Post not deleted!'
+    end
+    redirect_to posts_path
+  end
+
+
+
   private
 
   def post_params

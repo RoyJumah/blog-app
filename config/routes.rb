@@ -5,6 +5,10 @@ Rails.application.routes.draw do
 
   get 'posts/new', to: 'posts#new'
   post 'posts', to: 'posts#create'
+  delete 'posts/:id', to: 'posts#destroy', as: :delete_post
+  delete 'posts/:post_id/comments/:id', to: 'comments#destroy', as: :delete_comment
+
+
   
   resources :users, only: [:index, :show] do
     resources :posts, only: [:index, :show] do
