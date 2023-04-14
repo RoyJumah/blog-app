@@ -13,6 +13,4 @@ class ApplicationController < ActionController::Base
       user_params.permit(:name, :email, :password, :current_password)
     end
   end
-
-
 end
