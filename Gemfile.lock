@@ -138,10 +138,13 @@ GEM
     net-smtp (0.3.3)
       net-protocol
     nio4r (2.5.9)
-    nokogiri (1.14.2-x64-mingw-ucrt)
+    nokogiri (1.14.3-x64-mingw-ucrt)
+      racc (~> 1.4)
+    nokogiri (1.14.3-x86_64-linux)
       racc (~> 1.4)
     orm_adapter (0.5.0)
     pagy (6.0.3)
+    pg (1.4.6)
     pg (1.4.6-x64-mingw-ucrt)
     public_suffix (5.0.1)
     puma (5.6.5)
@@ -221,6 +224,8 @@ GEM
       railties (>= 6.0.0)
     tailwindcss-rails (2.0.27-x64-mingw-ucrt)
       railties (>= 6.0.0)
+    tailwindcss-rails (2.0.27-x86_64-linux)
+      railties (>= 6.0.0)
     thor (1.2.1)
     timeout (0.3.2)
     turbo-rails (1.4.0)
@@ -252,6 +257,7 @@ GEM
 
 PLATFORMS
   x64-mingw-ucrt
+  x86_64-linux
 
 DEPENDENCIES
   bootsnap
